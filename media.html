@@ -24,16 +24,22 @@
     <!-- Video with captions -->
     <section>
         <h2>Introduction Video</h2>
-        <video controls width="600">
-            <source src="planets.mp4" type="video/mp4">
-            <track src="captions.vtt" kind="subtitles" srclang="en" label="English">
+        <p>This video provides a fun and easy mnemonic to remember the order of the planets in the solar system, starting from the sun. It is a great way to learn and recall the names of the planets in sequence.</p>
+        <p>Video retrieved from YouTube <a href="https://www.youtube.com/watch?v=CKCFedO6wU8">here</a></p>
+        <video controls >
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/CKCFedO6wU8"
+            title="How to Remember the Order of the Planets Starting from the Sun | FUN &amp; EASY Solar System mnemonic"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+           <track src="./assets/captions/Planet-Mnemonic.vtt" kind="subtitles" srclang="en" label="English">
             Your browser does not support the video tag.
         </video>
     </section>
 
     <!-- Audio with controls -->
     <section>
-        <h2>Planetary Sounds: This audio file presents the sound on Jupiter as lightning sttikes from the planet's clouds; Retrieved from NASA's website <a href="https://www.nasa.gov/wp-content/uploads/2015/01/603921main_voyager_jupiter_lightning.mp3">here</a></h2>
+        <h2>Planetary Sounds: This audio file presents the sound on Jupiter as lightning strikes from the planet's clouds from the Voyager spacecraft; Retrieved from NASA's website <a href="https://www.nasa.gov/wp-content/uploads/2015/01/603921main_voyager_jupiter_lightning.mp3">here</a></h2>
         <audio controls>
             <source src="./assets/audios/voyager-sound.mp3" type="audio/mp3">
             Your browser does not support the audio element.
@@ -55,7 +61,7 @@
         <h2>Featured Planet</h2>
         <figure>
             <img src="./assets/images/mars-from-above.jpg" alt="Mars as seen from spaces" width="400">
-            <figcaption>Saturn, famous for its magnificent ring system.</figcaption>
+            <figcaption>Mars, seen from above with its distinct red hue from iron oxide .</figcaption>
         </figure>
     </section>
 </body>
