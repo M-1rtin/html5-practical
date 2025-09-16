@@ -2,126 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Solar System — Media Page</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Media Page</title>
 </head>
 
 <body>
+    <h1>Exploring the Planets</h1>
     <header>
-        <h1>Solar System — Media Page</h1>
-        <p>A simple HTML-only media showcase of planets (video, audio, responsive image, figure & captions).</p>
+        <h1>About the Solar System Planets</h1>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html" ariacurrent="page">About</a></li>
+                <li><a href="./media.html">Media</a></li>
+                <li><a href="./extras.html">Extras</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>1. Video with captions (.vtt)</h2>
-            <p>Below is a sample educational video. Captions are provided via a WebVTT track.</p>
+    <!-- Video with captions -->
+    <section>
+        <h2>Introduction Video</h2>
+        <video controls width="600">
+            <source src="planets.mp4" type="video/mp4">
+            <track src="captions.vtt" kind="subtitles" srclang="en" label="English">
+            Your browser does not support the video tag.
+        </video>
+    </section>
 
-            <!-- Video: using a public sample MP4; caption track provided inline via data: URI -->
-            <video controls width="720" preload="metadata">
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                <!-- Inline WebVTT track using a data: URI (so no external .vtt file required) -->
-                <track kind="subtitles" srclang="en" label="English" default
-                    src="data:text/vtt;charset=utf-8,WEBVTT%0A%0A00:00:00.000%20-->%2000:00:04.000%0ASmall%20clip%20showing%20a%20planet-like%20scene.%0A%0A00:00:04.000%20-->%2000:00:08.000%0AThe%20Solar%20System%20contains%20eight%20planets%20orbiting%20the%20Sun.%0A">
-                Your browser does not support the video element.
-            </video>
+    <!-- Audio with controls -->
+    <section>
+        <h2>Planetary Sounds: This audio file presents the observed continuation of signals detected by the Voyager 1 plasma wave instrument as the
+        spacecraft proceeds into interstellar space</h2>
+        <audio controls>
+            <source src="./assets/audios/voyager-sound.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
 
-            <p>Notes: The captions above are encoded inline as a <code>data:</code> URI in WebVTT format. For
-                production, you can replace the track <code>src</code> with a normal file like
-                <code>captions.vtt</code>.</p>
-        </section>
+    <!-- Responsive image -->
+    <section>
+        <h2>Planet Images</h2>
+        <picture>
+            <source srcset="./assets/images/earth-small.jpg " media="(max-width: 600px)">
+            <source srcset="./assets/images/earth-medium.jpg " media="(max-width: 1200px)">
+            <img src="./assets/images/earth.jpg" alt="Earth as seen from space">
+        </picture>
+    </section>
 
-        <section>
-            <h2>2. Audio with controls</h2>
-            <p>Short audio sample describing the planets (sample audio file used):</p>
-
-            <audio controls>
-                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-
-            <p>If you want to attach your own narration, replace the <code>src</code> with your MP3/OGG file.</p>
-        </section>
-
-        <section>
-            <h2>3. Responsive image (using &lt;picture&gt;, srcset & sizes)</h2>
-            <p>The picture element below serves different image sizes depending on viewport width.</p>
-
-            <picture>
-                <!-- A small image for narrow viewports -->
-                <source media="(max-width: 400px)"
-                    srcset="https://via.placeholder.com/400x250.png?text=Earth+400w 400w">
-                <!-- medium -->
-                <source media="(max-width: 800px)"
-                    srcset="https://via.placeholder.com/800x500.png?text=Earth+800w 800w">
-                <!-- fallback / large -->
-                <img src="https://via.placeholder.com/1200x750.png?text=Earth+1200w"
-                    srcset="https://via.placeholder.com/400x250.png?text=Earth+400w 400w, https://via.placeholder.com/800x500.png?text=Earth+800w 800w, https://via.placeholder.com/1200x750.png?text=Earth+1200w 1200w"
-                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 75vw, 600px"
-                    alt="Illustration: Earth (responsive image)">
-            </picture>
-
-            <p>Explanation: the browser chooses the best image from <code>srcset</code> according to <code>sizes</code>
-                and current viewport width.</p>
-        </section>
-
-        <section>
-            <h2>4. Figure with &lt;figcaption&gt;</h2>
-
-            <figure>
-                <img src="https://via.placeholder.com/600x400.png?text=Mars+600w" alt="Mars image" width="600"
-                    height="400">
-                <figcaption><strong>Mars —</strong> the fourth planet from the Sun. Often called the Red Planet due to
-                    iron oxide on its surface.</figcaption>
-            </figure>
-
-            <p>Use <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> to give media semantic meaning and
-                captions for accessibility.</p>
-        </section>
-
-        <section>
-            <h2>5. Quick planet facts (HTML elements demo)</h2>
-            <p>Short structured content to show headings, lists and a table:</p>
-
-            <h3>Some planets</h3>
-            <ul>
-                <li>Mercury — smallest planet</li>
-                <li>Venus — similar in size to Earth</li>
-                <li>Earth — our home</li>
-                <li>Mars — the red planet</li>
-            </ul>
-
-            <h3>Comparison table (radius)</h3>
-            <table border="1" summary="Planet radius comparison">
-                <thead>
-                    <tr>
-                        <th>Planet</th>
-                        <th>Mean radius (km)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Earth</td>
-                        <td>6,371</td>
-                    </tr>
-                    <tr>
-                        <td>Mars</td>
-                        <td>3,390</td>
-                    </tr>
-                    <tr>
-                        <td>Venus</td>
-                        <td>6,052</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-    <footer>
-        <p>Sources: sample media files from public examples. Replace the sample URLs with your own assets if required by
-            your assignment.</p>
-    </footer>
+    <!-- Figure with figcaption -->
+    <section>
+        <h2>Featured Planet</h2>
+        <figure>
+            <img src="./assets/images/mars-from-above.jpg" alt="Mars as seen from spaces" width="400">
+            <figcaption>Saturn, famous for its magnificent ring system.</figcaption>
+        </figure>
+    </section>
 </body>
 
 </html>
